@@ -1,20 +1,45 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title class="ion-text-center">
+      Gift Shop
     </ion-title>
   </ion-toolbar>
+  <ion-searchbar
+  debounce="800"
+  #searchInput
+  mode="ios"
+  placeholder="Search for gifts..."
+  (ionInput)="onSearchChange($event)">
+</ion-searchbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-row>
+    @for (item of items; track i; let i = $index) {
+      <ion-col sizeLg="3" sizeMd="4" sizeSm="6" sizeXl="3" sizeXs="6">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+        <ion-card>
+          <ion-thumbnail>
+          <ion-img [src]="item?.cover"></ion-img>
+          </ion-thumbnail>
+
+          <ion-label>
+            <ion-text color="dark"><strong>{{item?.name}}</strong></ion-text>
+            <p>
+              <ion-text color="dark">
+                <strong> ${{item?.price }}</strong>
+              </ion-text>
+
+              <ion-text class="rating" color="dark">
+                {{item?.rating}}
+                <ion-icon name="star" color="warning"></ion-icon>
+              </ion-text>
+            </p>
+          </ion-label>
+        </ion-card>
+
+      </ion-col>
+    }
+  </ion-row>
 </ion-content>
