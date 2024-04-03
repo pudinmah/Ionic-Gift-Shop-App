@@ -24,3 +24,21 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+
+ion-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  margin: 0rem -0.3rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ion-text {
+    font-size: 0.6rem;
+  }
+}
