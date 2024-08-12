@@ -9,7 +9,7 @@ import { IonContent,
    IonButtons,
    IonBackButton,
    NavController, IonIcon, IonItem, IonLabel, IonText, IonFooter, IonBadge } from '@ionic/angular/standalone';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ApiService } from 'src/app/services/api/api.service';
 import { CartService } from 'src/app/services/cart/cart.service';
 import { Subscription } from 'rxjs';
@@ -32,6 +32,7 @@ import { Subscription } from 'rxjs';
      CommonModule,
      FormsModule,
      UpperCasePipe,
+     RouterLink
 
 
 

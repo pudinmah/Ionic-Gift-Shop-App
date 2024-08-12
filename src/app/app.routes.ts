@@ -6,11 +6,24 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        loadComponent: () => import('./home/home.page').then((m) => m.HomePage)
+        loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+      },
+      {
+        path: 'cart',
+        loadComponent: () => import('./home/cart/cart.page').then( m => m.CartPage)
       },
       {
         path: 'gifts/:id',
-        loadComponent: () => import('./home/item-detail/item-detail.page').then( m => m.ItemDetailPage)
+        children: [
+          {
+            path: '',
+            loadComponent: () => import('./home/item-detail/item-detail.page').then( m => m.ItemDetailPage)
+          },
+          {
+            path: 'cart',
+            loadComponent: () => import('./home/cart/cart.page').then( m => m.CartPage)
+          },
+        ],
       },
     ],
   },
@@ -18,6 +31,9 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
+  },  {
+    path: 'cart',
+    loadComponent: () => import('./home/cart/cart.page').then( m => m.CartPage)
   },
 
 ];

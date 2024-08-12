@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { star,bagHandleOutline, bagHandle } from 'ionicons/icons'
+import { star,bagHandleOutline, bagHandle, trashOutline, remove, add } from 'ionicons/icons'
 
 
 @Component({
@@ -15,7 +15,10 @@ export class AppComponent {
     addIcons({
       star,
       bagHandleOutline,
-      bagHandle
+      bagHandle,
+      trashOutline,
+      add,
+      remove
     });
   }
 }

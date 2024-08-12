@@ -6,12 +6,13 @@
       <ion-buttons slot="start" mode="md">
         <ion-back-button defaultHref="/home" color="light"></ion-back-button>
       </ion-buttons>
-      
+
       <ion-buttons slot="end">
         <ion-button
         fill="clear"
         size="large"
         color="light"
+        [routerLink]="['/','home','cart']"
         >
       <ion-icon name="bag-handle" slot="icon-only"></ion-icon>
       @if(totalItems > 0) {
