@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { StorageService } from '../storage/storage.service';
-import { String } from 'src/app/enum/strings.enum';
+import { Strings } from 'src/app/enum/strings.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,8 @@ export class CartService {
 
   model: any = null;
   total_delivery_charge = 100;
-  cartStoreName = String.CART_STORAGE;
-  currency = String.CURRENCY;
+  cartStoreName = Strings.CART_STORAGE;
+  currency = Strings.CURRENCY;
   private storage = inject(StorageService);
 
   private _cart = new BehaviorSubject<any>(null);

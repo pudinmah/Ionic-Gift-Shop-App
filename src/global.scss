@@ -26,6 +26,10 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 ion-badge {
   position: absolute;
   top: 0;

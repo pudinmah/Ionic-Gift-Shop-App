@@ -133,6 +133,51 @@ export class ApiService {
       description: 'Bring nature indoors with our Eco-friendly Planters, designed for the eco-conscious and nature enthusiasts.'
     },
   ];
-  
+
+  coupons: any[] = [
+    {
+      id: "1",
+      code: "SAVE10",
+      discount: 10,
+      isPercentage: true,
+      description: "Get 10% off on your order",
+      isActive: true,
+      expiryDate: "2024-06-30",
+      minimumOrderAmount: 50,
+    },
+    {
+      id: "2",
+      code: "FREESHIP",
+      discount: 50,
+      isPercentage: false,
+      description: "Flat 50 bucks off on all orders",
+      isActive: true,
+      expiryDate: "2024-12-31",
+    },
+    {
+      id: "3",
+      code: "BUNDLEDEAL",
+      discount: 20,
+      isPercentage: true,
+      description: "Buy one get one 50% off",
+      isActive: false,
+      expiryDate: "2024-09-15",
+    },
+    {
+      id: "4",
+      code: "GIFTSHOP",
+      discount: 30,
+      isPercentage: true,
+      description: "Get 30% off on orders above 5000",
+      isActive: true,
+      expiryDate: "2024-12-31",
+      minimumOrderAmount: 5000,
+    },
+  ];
+
   constructor() { }
+
+  getCoupons() {
+    return this.coupons.filter(coupon => coupon.isActive);
+  }
 }
